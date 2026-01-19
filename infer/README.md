@@ -36,6 +36,8 @@ The script will generate a JSONL file containing audio tokens in the output dire
 Use `decode_audio.py` to decode the generated audio tokens back to audio files.
 
 ```bash
+git clone https://github.com/tencent-ailab/MuCodec.git
+cd MuCodec
 python infer/decode_audio.py
 ```
 
@@ -65,6 +67,8 @@ The decoded audio files will be saved as WAV files.
 
 3. Decode tokens to audio:
    ```bash
+   git clone https://github.com/tencent-ailab/MuCodec.git
+   cd MuCodec
    # Modify paths in decode_audio.py as needed, then run:
    python infer/decode_audio.py
    ```
