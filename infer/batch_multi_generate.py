@@ -22,7 +22,8 @@ def parse_args():
     parser.add_argument("--input_path", type=str, required=True, help="Input JSONL file path")
     parser.add_argument("--output_dir", type=str, required=True, help="Output directory")
     parser.add_argument("--ckpt_dir", type=str, required=True, help="Model checkpoint directory")
-    parser.add_argument("--repetition_penalty", type=float, required=True, help="Repetition penalty coefficient")
+    parser.add_argument("--temperature", type=float, default=0.9, help="Generation temperature")
+    parser.add_argument("--repetition_penalty", type=float, default=1.3, help="Repetition penalty coefficient")
     parser.add_argument("--batch_size", type=int, default=8, help="Batch size")
     parser.add_argument("--log_path", type=str, default="error.log", help="Error log file path")
     return parser.parse_args()
@@ -56,7 +57,7 @@ def main():
         print(f"⚠️ Detected {output_path} already exists, skipping this checkpoint.")
         return
 
-    GEN_KWARGS = dict(max_tokens=3000, temperature=0, top_p=0.9, repetition_penalty=args.repetition_penalty)
+    GEN_KWARGS = dict(max_tokens=3000, temperature=args.temperature, top_p=0.9, repetition_penalty=args.repetition_penalty)
 
     print(f"🚀 Loading model with vLLM: {args.ckpt_dir}")
     llm = LLM(model=args.ckpt_dir, enforce_eager=True, dtype="float32", tensor_parallel_size=1, trust_remote_code=True, max_model_len=20000, gpu_memory_utilization=0.8)
