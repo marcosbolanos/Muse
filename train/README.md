@@ -6,7 +6,7 @@ The training code uses [ms-swift](https://github.com/modelscope/ms-swift), a sca
 
 ### `MODEL_PATH` Parameter
 
-The `MODEL_PATH` in `train.sh` should point to the base model. Download the model from [HuggingFace](https://huggingface.co/datasets/bolshyC/qwen3-0.6B-music):
+The `MODEL_PATH` in `train.sh` should point to the base model. Download the model from [HuggingFace]([https://huggingface.co/datasets/bolshyC/qwen3-0.6B-music](https://huggingface.co/bolshyC/qwen3-0.6B-music)):
 
 ```bash
 # Download the model using huggingface_hub
