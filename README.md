@@ -8,6 +8,7 @@ This repository is the official repository for "Muse: Towards Reproducible Long-
 
 ## News and Updates
 
+* **2026.04.07 🎉**: Our paper has been accepted to ACL 2026!
 * **2026.02.11 🎵**: Demo website is now publicly available!
 * **2026.01.11 🔥**: We are excited to announce that all datasets and models are now fully open-sourced! 🎶 The complete training dataset (116k songs), pretrained model weights, training and evaluation code, and data pipeline are publicly available.
 
